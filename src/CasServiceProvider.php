@@ -4,7 +4,7 @@ namespace Uicosp\JwtCasClient;
 
 use Illuminate\Support\ServiceProvider;
 
-class JwtCasServiceProvider extends ServiceProvider
+class CasServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
