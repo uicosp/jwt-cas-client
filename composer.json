@@ -1,0 +1,19 @@
+{
+    "name": "uicosp/jwt-cas-client",
+    "description": "The client part for uicosp/jwt-cas-server",
+    "require": {
+        "tymon/jwt-auth": "^0.5.9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yudu",
+            "email": "uicosp@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Uicosp\\JwtCasClient": "src/"
+        }
+    }
+}
