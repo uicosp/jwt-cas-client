@@ -16,7 +16,7 @@ Client 端提供一个校验 `token` 的中间件
 
 `Uicosp\JwtCasClient\Middleware\VerifyCasToken`
 
-该中间件会验证每次请求中携带的 `token` 的合法性。校验失败将返回错误信息给前端。校验通过则将解密后的 `token` 注入到 $request 中。可通过 $request->get('verified_token') 获取。`verified_token` 示例如下：
+该中间件会验证每次请求中携带的 `token` 的合法性。校验失败将返回错误信息给前端。校验通过则将解密后的 `token` 注入到 `$request` 中。可通过 `$request['verified_token']` 获取。`verified_token` 示例如下：
 
 ```php
 array:6 [
