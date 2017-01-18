@@ -31,7 +31,7 @@ class VerifyCasToken
             return response()->json(['token_absent'], $e->getStatusCode());
         }
 
-        $request['verified_token' => $payload->get()];
+        $request['verified_token'] = $payload->get();
         return $next($request);
     }
 }
