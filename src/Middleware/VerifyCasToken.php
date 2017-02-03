@@ -20,6 +20,7 @@ class VerifyCasToken
     public function handle($request, Closure $next)
     {
         try {
+            app(JWTAuth::class)->getJWTProvider()->setSecret(config('jwt-cas-client.jwt_secret'));
             if (!$payload = app(JWTAuth::class)->parseToken()->getPayload()) {
                 return response()->json(['user_not_found'], 404);
             }

@@ -40,10 +40,25 @@ array:6 [
 本项目依赖 [typmon/jwt-auth](https://github.com/tymondesigns/jwt-auth)，请添加
 
 `Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class`,
+`Uicosp\JwtCasClient\CasServiceProvider::class,`
 
 到 `config/app.php` 的 `providers` 数组。
 
-### 2. 添加 Middleware
+### 2. 配置秘钥
+
+#### 方法一，通过环境变量设置
+
+在 `.env` 文件中设置 `CAS_JWT_SECRET`
+
+#### 方法二，通过 config 文件设置
+
+运行命令 `php artisan vendor:publish --provider="Uicosp\JwtCasClient\CasServiceProvider"`, 将在 `config` 目录下新增 `jwt-cas-client.php` 配置文件。
+
+修改
+
+`'jwt_secret' => env('CAS_JWT_SECRET', 'please-change-me'),`
+
+### 3. 添加 Middleware
 
 将 `Uicosp\JwtCasClient\Middleware\VerifyCasToken::class` 添加到 `app/Http/Kernel.php` 文件中。例如：
 

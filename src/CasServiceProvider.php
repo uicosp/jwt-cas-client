@@ -13,7 +13,9 @@ class CasServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__ . '/config.php' => config_path('jwt-cas-client.php')
+        ]);
     }
 
     /**
@@ -23,6 +25,8 @@ class CasServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__ . '/config.php', 'jwt-cas-client'
+        );
     }
 }
